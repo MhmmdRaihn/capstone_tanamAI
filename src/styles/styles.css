@@ -1,0 +1,201 @@
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  padding-top: 4.5rem; /* Tambahkan padding atas untuk header fixed */
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #198b69;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-bottom: 1rem;
+  text-align: left;
+  z-index: 99;
+}
+header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+header p {
+  font-size: 1rem;
+  color: #948979;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: none;
+}
+
+.navbar-container a, .navbar-container a:visited, .navbar-container a:focus {
+  margin-left: 1rem;
+  color: #198b69;
+  background-color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.navbar-container a:hover {
+  color: #ffffff;
+  background-color: #198b69;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 1rem;
+  color: #198b69;
+  font-size: 0.9rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 800px;
+}
+
+nav {
+  background-color: #393E46;
+  padding: 1rem;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+nav a {
+  color: #DFD0B8;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+  padding: 0.5rem;
+}
+nav a:hover {
+  color: #EEEEEE;
+}
+
+/* Form & Upload Container */
+.form-container,
+.upload-container {
+  background-color: #198b69;
+  padding: 2rem;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 500px;
+  margin: 4rem auto;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+#login-form button {
+  margin-top: 1rem;
+  color: #198b69;
+}
+
+#register-form button {
+  color: #198b69;
+}
+
+.form-container p {
+  margin-top: 1rem;
+}
+
+#register-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#register-form button {
+  margin-top: 1rem;
+}
+
+/* Labels & Inputs */
+label {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #ffffff;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+a {
+  color: #00FFDE;
+  transition: color 0.3s ease;
+}
+
+/* Fade & View-Transition */
+.fade-in {
+  animation: fade-in 0.5s ease-in forwards;
+}
+.fade-out {
+  animation: fade-out 0.5s ease-out forwards;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+}
+::view-transition-old(root) { animation-name: fade-out; }
+::view-transition-new(root) { animation-name: fade-in; }
+@keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes fade-in  { from { opacity: 0; } to { opacity: 1; } }
